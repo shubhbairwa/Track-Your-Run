@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/setUpFragment">
+    <action android:id="@+id/action_global_trackingFragment"
+        app:destination="@+id/trackingFragment"
+        app:launchSingleTop="true"
+        />
+
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="com.bairwa.trackyourrun.ui.fragments.RunFragment"
+        android:label="RunFragment" >
+        <action
+            android:id="@+id/action_runFragment_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.bairwa.trackyourrun.ui.fragments.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="com.bairwa.trackyourrun.ui.fragments.StatisticFragment"
+        android:label="StatisticFragment" />
+    <fragment
+        android:id="@+id/setUpFragment"
+        android:name="com.bairwa.trackyourrun.ui.fragments.SetUpFragment"
+        android:label="SetUpFragment" >
+        <action
+            android:id="@+id/action_setUpFragment_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.bairwa.trackyourrun.ui.fragments.TrackingFragment"
+        android:label="TrackingFragment" >
+        <action
+            android:id="@+id/action_trackingFragment_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+</navigation>
