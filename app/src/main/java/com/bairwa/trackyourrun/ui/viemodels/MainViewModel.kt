@@ -9,8 +9,9 @@ import com.bairwa.trackyourrun.other.SortingType
 import com.bairwa.trackyourrun.repositories.MainRepository
 import kotlinx.coroutines.launch
 
+
 class MainViewModel @ViewModelInject constructor(
-    val mainRepository: MainRepository
+    private val mainRepository: MainRepository
 ) :ViewModel(){
 private val runSortedByDate=mainRepository.getAllRunSortedByDate()
 private val runSortedByDistance=mainRepository.getAllRunSortedByDistance()

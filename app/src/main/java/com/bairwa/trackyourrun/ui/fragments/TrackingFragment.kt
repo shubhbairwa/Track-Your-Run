@@ -29,6 +29,7 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import java.util.*
+import javax.inject.Inject
 import kotlin.math.round
 
 @AndroidEntryPoint
@@ -39,7 +40,9 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private val viewmodel: MainViewModel by viewModels()
     private var currentTimeInMiliis = 0L
     private var map: GoogleMap? = null
-    private var weight = 80
+
+    @set:Inject
+     var weight = 80f
 
     private var menu: Menu? = null
 
@@ -145,8 +148,11 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun stopRun() {
+
         sendCommandToService(ACTION_STOP_SERVICE)
+
         findNavController().navigate(R.id.action_trackingFragment_to_runFragment)
+
     }
 
     private fun upDateTracking(isTracking: Boolean) {
