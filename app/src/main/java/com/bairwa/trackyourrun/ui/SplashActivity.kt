@@ -37,8 +37,9 @@ rightAnim=AnimationUtils.loadAnimation(applicationContext,R.anim.slide_in_right)
 
 
 
-        imageView2.animation = topAnim
-textView.animation=bottomAnim
+//        imageView2.animation = topAnim
+imageView2.animation=topAnim
+        textView.animation=bottomAnim
 imageView.animation=rightAnim
 
         val splash: Thread = object : Thread() {
