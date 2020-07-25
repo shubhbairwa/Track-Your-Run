@@ -33,14 +33,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="268dp"
-        android:layout_height="45dp"
-        android:alpha="1.0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         android:fontFamily="@font/alfa_slab_one"
         android:text="Track Your Run"
-        android:textAlignment="center"
+        android:paddingLeft="4dp"
+android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="30dp"
+
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
