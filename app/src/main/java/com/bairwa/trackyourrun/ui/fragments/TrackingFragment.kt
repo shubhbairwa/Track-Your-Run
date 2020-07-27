@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.fragment_tracking.*
 import java.util.*
 import javax.inject.Inject
 import kotlin.math.round
-
+const val CANCEL_TRACKING_DIALOG="CancelDialog"
 @AndroidEntryPoint
 class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
@@ -73,6 +73,15 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             addAllPolyLines()
         }
         subscribeToObservers()
+
+
+        if (savedInstanceState!=null){
+            val cancelTrackingDialog=parentFragmentManager.findFragmentByTag(CANCEL_TRACKING_DIALOG) as CancelTrackingDialog?
+cancelTrackingDialog?.setYesListener {
+    stopRun()
+}
+
+        }
 
 
     }
@@ -122,19 +131,13 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun showCancelTrackingDialog() {
-        val dialog = MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
-            .setIcon(R.drawable.ic_delete)
-            .setTitle("Cancel the Run?")
-            .setMessage("Are you sure to cancel the run and delete all its data?")
-            .setPositiveButton("Yes") { _, _ ->
-                stopRun()
 
-            }
-            .setNegativeButton("No") { dialog, _ ->
-                dialog.cancel()
-            }.create()
-        dialog.show()
+        CancelTrackingDialog().apply {
+    setYesListener {
 
+        stopRun()
+    }
+}.show(parentFragmentManager,CANCEL_TRACKING_DIALOG)
 
     }
 
@@ -148,7 +151,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun stopRun() {
-
+tvTimer.text="00:00:00:00"
         sendCommandToService(ACTION_STOP_SERVICE)
 
         findNavController().navigate(R.id.action_trackingFragment_to_runFragment)
@@ -157,10 +160,10 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
     private fun upDateTracking(isTracking: Boolean) {
         this.isTracking = isTracking
-        if (!isTracking) {
+        if (!isTracking && currentTimeInMiliis>0L) {
             btnToggleRun.text = "Start"
             btnFinishRun.visibility = View.VISIBLE
-        } else {
+        } else if (isTracking){
             btnToggleRun.text = "Stop"
             menu?.getItem(0)?.isVisible = true
             btnFinishRun.visibility = View.GONE
