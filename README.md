@@ -3,4 +3,6 @@ This is an Android Application that follows the MVVM(model-view-ViewModel) patte
 
 ## Screenshots of Fragments
 <img width="235" alt="runnew" src="https://user-images.githubusercontent.com/40567854/88628384-82d29a00-d0cb-11ea-9727-0661bded888a.png"> 
-<img width="209" alt="statistc" src="https://user-images.githubusercontent.com/40567854/88628490-af86b180-d0cb-11ea-9e97-26c8c5bf27ff.png">
+
+<img width="209" alt="statistc" src="https://user-images.githubusercontent.com/40567854/88628581-cf1dda00-d0cb-11ea-8858-071dd8543ad0.png">
+
