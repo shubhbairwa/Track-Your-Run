@@ -7,3 +7,7 @@ This is an Android Application that follows the MVVM(model-view-ViewModel) patte
 ## Screenshots of Statistics
 <img width="209" alt="statistc" src="https://user-images.githubusercontent.com/40567854/88628581-cf1dda00-d0cb-11ea-8858-071dd8543ad0.png">
 
+## Screenshots of Other Fragments
+![Screenshot_2020-07-28-11-58-09-346_com bairwa trackyourrun](https://user-images.githubusercontent.com/40567854/88629050-6be07780-d0cc-11ea-9423-75e06586b930.jpg)
+![Screenshot_2020-07-28-11-58-06-049_com bairwa trackyourrun](https://user-images.githubusercontent.com/40567854/88629058-6d11a480-d0cc-11ea-9c3d-37a9230640b3.jpg)
+
