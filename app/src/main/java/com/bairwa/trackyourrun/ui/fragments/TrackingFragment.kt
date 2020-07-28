@@ -31,7 +31,9 @@ import kotlinx.android.synthetic.main.fragment_tracking.*
 import java.util.*
 import javax.inject.Inject
 import kotlin.math.round
-const val CANCEL_TRACKING_DIALOG="CancelDialog"
+
+const val CANCEL_TRACKING_DIALOG = "CancelDialog"
+
 @AndroidEntryPoint
 class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
@@ -42,7 +44,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private var map: GoogleMap? = null
 
     @set:Inject
-     var weight = 80f
+    var weight = 80f
 
     private var menu: Menu? = null
 
@@ -75,11 +77,12 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
         subscribeToObservers()
 
 
-        if (savedInstanceState!=null){
-            val cancelTrackingDialog=parentFragmentManager.findFragmentByTag(CANCEL_TRACKING_DIALOG) as CancelTrackingDialog?
-cancelTrackingDialog?.setYesListener {
-    stopRun()
-}
+        if (savedInstanceState != null) {
+            val cancelTrackingDialog =
+                parentFragmentManager.findFragmentByTag(CANCEL_TRACKING_DIALOG) as CancelTrackingDialog?
+            cancelTrackingDialog?.setYesListener {
+                stopRun()
+            }
 
         }
 
@@ -133,11 +136,11 @@ cancelTrackingDialog?.setYesListener {
     private fun showCancelTrackingDialog() {
 
         CancelTrackingDialog().apply {
-    setYesListener {
+            setYesListener {
 
-        stopRun()
-    }
-}.show(parentFragmentManager,CANCEL_TRACKING_DIALOG)
+                stopRun()
+            }
+        }.show(parentFragmentManager, CANCEL_TRACKING_DIALOG)
 
     }
 
@@ -151,7 +154,7 @@ cancelTrackingDialog?.setYesListener {
     }
 
     private fun stopRun() {
-tvTimer.text="00:00:00:00"
+        tvTimer.text = "00:00:00:00"
         sendCommandToService(ACTION_STOP_SERVICE)
 
         findNavController().navigate(R.id.action_trackingFragment_to_runFragment)
@@ -160,10 +163,10 @@ tvTimer.text="00:00:00:00"
 
     private fun upDateTracking(isTracking: Boolean) {
         this.isTracking = isTracking
-        if (!isTracking && currentTimeInMiliis>0L) {
+        if (!isTracking && currentTimeInMiliis > 0L) {
             btnToggleRun.text = "Start"
             btnFinishRun.visibility = View.VISIBLE
-        } else if (isTracking){
+        } else if (isTracking) {
             btnToggleRun.text = "Stop"
             menu?.getItem(0)?.isVisible = true
             btnFinishRun.visibility = View.GONE
@@ -226,7 +229,7 @@ tvTimer.text="00:00:00:00"
                 "run saved successfully",
                 Snackbar.LENGTH_LONG
             ).show()
-stopRun()
+            stopRun()
         }
     }
 
