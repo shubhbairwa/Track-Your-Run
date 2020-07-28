@@ -8,6 +8,7 @@ This is an Android Application that follows the MVVM(model-view-ViewModel) patte
 <img width="209" alt="statistc" src="https://user-images.githubusercontent.com/40567854/88628581-cf1dda00-d0cb-11ea-8858-071dd8543ad0.png">
 
 ## Screenshots of Other Fragments
-![Screenshot_2020-07-28-11-58-09-346_com bairwa trackyourrun](https://user-images.githubusercontent.com/40567854/88629050-6be07780-d0cc-11ea-9423-75e06586b930.jpg)
-![Screenshot_2020-07-28-11-58-06-049_com bairwa trackyourrun](https://user-images.githubusercontent.com/40567854/88629058-6d11a480-d0cc-11ea-9c3d-37a9230640b3.jpg)
+<img width="216" alt="home" src="https://user-images.githubusercontent.com/40567854/88629919-7f401280-d0cd-11ea-8363-54a2295ded69.png">
+<img width="211" alt="text" src="https://user-images.githubusercontent.com/40567854/88629922-80713f80-d0cd-11ea-9f5e-76d840938529.png">
+
 
