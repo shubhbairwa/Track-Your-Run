@@ -1,5 +1,5 @@
 # Track-Your-Run
-This is an Android Application that follows the MVVM(model-view-ViewModel) pattern. This app tracks your run with the help of Google Maps API and also shows the path you take for your sprint. You can save your run and also sort them according to date,calories burned,time and many more.
+This is an Android Application that follows the MVVM(model-view-ViewModel) pattern. This app track your runs with the help of Google Maps API and also shows the path you take for your sprint. You can save your run and also sort them according to date,calories burned,time and many more.
 
 ## Screenshots of Fragments
 <img width="235" alt="runnew" src="https://user-images.githubusercontent.com/40567854/88628384-82d29a00-d0cb-11ea-9727-0661bded888a.png"> 
