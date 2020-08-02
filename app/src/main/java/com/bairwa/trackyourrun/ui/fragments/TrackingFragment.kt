@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bairwa.trackyourrun.R
@@ -23,6 +22,7 @@ import com.bairwa.trackyourrun.ui.viemodels.MainViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -73,6 +73,9 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
         mapView.getMapAsync {
             map = it
             addAllPolyLines()
+            
+
+
         }
         subscribeToObservers()
 
@@ -180,7 +183,9 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
                 CameraUpdateFactory.newLatLngZoom(
                     pathPoint.last().last(), MAP_ZOOM
                 )
+
             )
+
         }
     }
 
@@ -245,7 +250,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun addLatestPolyline() {
-        if (pathPoint.isNotEmpty() && pathPoint.last().size > 2) {
+        if (pathPoint.isNotEmpty() && pathPoint.last().size > 1) {
             val preLastLatLng = pathPoint.last()[pathPoint.last().size - 2]
             val lastLatLng = pathPoint.last().last()
             val polylineOptions = PolylineOptions()

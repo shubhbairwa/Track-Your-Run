@@ -58,12 +58,7 @@ imageView.animation=rightAnim
     }
 
 
-private fun setUpAnimation(context: Context, resourceId:Int,duration: Int){
-    var animation = AnimationUtils.loadAnimation(context, resourceId)
-    var interpolator=FastOutLinearInInterpolator()
-    animation.interpolator = interpolator
 
-}
     }
 
 
